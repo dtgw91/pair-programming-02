@@ -25,20 +25,20 @@ public class ValidationServiceTest {
     @Test
     // to modify test scenario once implementation is included
     public void testReturnFalse(){
-        assertFalse(validationService.validate(Collections.emptyList()));
+        assertFalse(validationService.validate());
     }
 
     @Test
     public void testCallsExternalModuleIfToggledOn(){
         validationService.toggleOn();
-        validationService.validate(Collections.emptyList());
+        validationService.validate();
         verify(mockExternalModuleService, times(1)).getWorkDayRecordFromExternal();
     }
 
     @Test
     public void testDoesNotCallExternalModuleIfToggledOff(){
         validationService.toggleOff();
-        validationService.validate(Collections.emptyList());
+        validationService.validate();
         verify(mockExternalModuleService, never()).getWorkDayRecordFromExternal();
     }
 }
