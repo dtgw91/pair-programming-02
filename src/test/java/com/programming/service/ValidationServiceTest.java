@@ -8,6 +8,8 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.MockitoJUnitRunner;
 
+import java.util.Collections;
+
 import static org.junit.Assert.assertFalse;
 import static org.mockito.Mockito.*;
 
@@ -23,20 +25,20 @@ public class ValidationServiceTest {
     @Test
     // to modify test scenario once implementation is included
     public void testReturnFalse(){
-        assertFalse(validationService.validate());
+        assertFalse(validationService.validate(Collections.emptyList()));
     }
 
     @Test
     public void testCallsExternalModuleIfToggledOn(){
         validationService.toggleOn();
-        validationService.validate();
+        validationService.validate(Collections.emptyList());
         verify(mockExternalModuleService, times(1)).getWorkDayRecordFromExternal();
     }
 
     @Test
     public void testDoesNotCallExternalModuleIfToggledOff(){
         validationService.toggleOff();
-        validationService.validate();
+        validationService.validate(Collections.emptyList());
         verify(mockExternalModuleService, never()).getWorkDayRecordFromExternal();
     }
 }

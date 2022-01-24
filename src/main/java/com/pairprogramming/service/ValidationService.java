@@ -15,7 +15,8 @@ public class ValidationService {
     private boolean includeExternalToggle = false;
     private ExternalModuleService externalModuleService;
 
-    public boolean validate(){
+    // to recommend any change of args if necessary
+    public boolean validate(List<WorkDay> listOfWorkdays){
         if (includeExternalToggle){
             //to call externalservicemodule method here
             List<WorkDay> mondayWorkDay = externalModuleService.getWorkDayRecordFromExternal();
