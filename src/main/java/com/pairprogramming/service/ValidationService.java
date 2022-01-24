@@ -19,7 +19,7 @@ public class ValidationService {
     public boolean validate(/* input arguments */){
         if (includeExternalToggle){
             //to call externalservicemodule method here
-            List<WorkDay> mondayWorkDay = externalModuleService.getWorkDayRecordFromExternal();
+            List<WorkDay> workDayList = externalModuleService.getWorkDayRecordFromExternal();
         }
         //to implement
         return false;
