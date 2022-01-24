@@ -1,4 +1,6 @@
-Background
+**Background**
+
+Your team is helping HR to create a module for planning work schedules for workers.  As part of the design, you are tasked with creating a validation module that will help validate if a proposed weekly working schedule for a worker is valid.  The definition of a valid weekly work schedule is that the total number of working days cannot exceed 4 days.  
 
 **Part (i)**
 - to create a validation module to check if the working days for a scheduled person is valid
